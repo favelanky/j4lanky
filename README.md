@@ -6,11 +6,10 @@
 2. Install dependencies with `pip install -r requirements.txt`.
 3. Clone judging repo into the `/submissions` directory or wherever you want.
 4. Change SUBMISSIONS_DIR in `.env` to the directory with cloned submissions.
-5. Write suggestions in the `judgments.txt` file.
+5. Write suggestions in the `judgements.txt` file.
 6. Run `python3 main.py`.
-7. The results will be in the used directory sorted by `judgments.txt` file.
+7. The results will be in the used directory sorted by `judgements.txt` file.
 8. Commit and push changes to your judging repo.
-
 
 ## Why I made this?
 
