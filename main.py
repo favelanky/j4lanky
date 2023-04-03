@@ -18,11 +18,9 @@ with open('./judgements.txt', 'r') as f:
     while line:
         line = line.strip()
         sep = line.split('-')
-        print(sep, number, symbol)
         if len(sep) >= 2 and line.find(':') != -1:  # if it's name and symbol
             sep = [sep[0], sep[1].split(':')[0]]
             line = line.replace(':', ' ')
-            print(line)
             if line.lower().find('invalid-submissions') != -1:
                 number = '000'
                 symbol = 'I'
@@ -33,8 +31,8 @@ with open('./judgements.txt', 'r') as f:
                 number = sep[1].split(' ')[0].zfill(3)  # because of comments
                 symbol = sep[0][0].upper()
         elif sep[0] != '':  # check if string is not empty
-            key = line.split(' ')[0].zfill(3)  # because of comments
-            if key.find('best') != -1:
+            key = line.replace('-', ' ').split(' ')[0].zfill(3)  # because of comments
+            if line.find('best') != -1:
                 is_best[key] = True
             if key not in redirection:
                 redirection[key] = number + '-' + symbol
@@ -46,15 +44,9 @@ with open('./judgements.txt', 'r') as f:
 if was_error:
     exit(0)
 
-# print('-------')
-# for key in redirection:
-#     print(key, redirection[key])
-# print('-------')
-
 total_warnings = 0
-# go into cloned dir and iterate through files
+# go into the cloned dir and iterate through files
 for file in os.listdir(submissions_dir):
-    print(file)
     sum = 0
     if file.endswith('md'):
         name = file.split('.')[0]
@@ -70,7 +62,8 @@ for file in os.listdir(submissions_dir):
             os.mkdir(submissions_dir + '/' + dir_name)
         # move file
         if name in is_best:
-            os.rename(submissions_dir + '/' + file, submissions_dir + '/' + dir_name + '/' + file + '-best')
+            # filename-best.md
+            os.rename(submissions_dir + '/' + file, submissions_dir + '/' + dir_name + '/' + file.replace('.md', '-best.md'))
         else:
             os.rename(submissions_dir + '/' + file, submissions_dir + '/' + dir_name + '/' + file)
 
