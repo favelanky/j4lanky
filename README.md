@@ -11,6 +11,11 @@
 7. The results will be in the used directory sorted by `judgments.txt` file.
 8. Commit and push changes to your judging repo.
 
+
+## Why I made this?
+
+I wanted to make the judging process more comfortable and faster. I use a browser and a text editor to write suggestions. Now I do not need manually drag and drop files between folders.
+
 ## How to write suggestions?
 
 ### Example
@@ -34,7 +39,6 @@ M-002: comments
 3-M: something else
 09 comments...
 
-
 Invalid-submissions:
 1 idk
 2
@@ -55,10 +59,6 @@ Invalid-submissions:
 ## Rules
 
 1. Read about [Judging](https://docs.sherlock.xyz/audits/judging) and [Rules](https://docs.sherlock.xyz/audits/judging/guide-to-judging-contests).
-
-## Why I made this?
-
-I wanted to make the judging process more comfortable and faster. I use a browser and a text editor to write suggestions. Now I do not need manually drag and drop files between folders.
 
 ## Creator
 
