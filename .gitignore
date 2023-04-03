@@ -1,0 +1,7 @@
+# directories
+/venv
+/submissions
+
+# files
+judgements.txt
+.env
